@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품선택</title>
+</head>
+<body>
+<div align="center">
+    <h2> 상품 선택</h2>
+    <hr>
+    <%=login%>님 환영합니다 <br>
+    <form action = "/select" method="post">
+        <select name = "product">
+            <option value="사과">사과</option>
+            <option value="배">배</option>
+            <option value="복숭아">복숭아</option>
+            <option value="바나나">바나나</option>
+            <option value="포도">포도</option>
+        </select>
+        <input type="submit" value="추가">
+    </form> <br>
+    <a href="/complete">계산</a>
+</div>
+</body>
+</html>

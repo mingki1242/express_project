@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적</title>
+</head>
+<body>
+<div align="center">
+    <%  const total = Number(mexam) + Number(fexam) + Number(report) + Number(attendance); %>
+    <%  if(total >= 60)  {  %>
+        <h2> 성적을 취득 하였습니다 </h2> <br>
+    <% } else {%>
+
+
+        <h2> 총점이 60점 미만 입니다 </h2>
+    <%}%>
+
+    학번 : <%=id%> <br>
+    이름 : <%=name%> <br>
+
+    중간 시험 : <%=mexam%> <br>
+    기말 시험 : <%=fexam%> <br>
+    출결 : <%=attendance%> <br>
+    리포트 : <%=report%> <br>
+
+    총점 : <%=total%> 입니다 <br>
+    <a href="/">다시 입력하기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계산</title>
+</head>
+<body>
+<div align="center">
+    <h2> 계산</h2>
+
+    <%=login%>님이 선택한 상품 목록 <br>
+    <hr>
+    <% for(let item of basket){ %>
+    계산 할 상품 : <%= item %> <br>
+    <%}%>
+
+    <a href = "/" >계속 선택 하기</a>
+</div>
+</body>
+</html>
