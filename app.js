@@ -1,22 +1,25 @@
 const express = require("express");
 const session = require("express-session");
 const dao = require("./services/dao");
-const user_router = require("./routes/users");
-const board_router = require("./routes/board");
+const user_router = require("./routes/users"); //컨트롤러 사용하기 위함
+const board_router = require("./routes/board"); //컨트롤러 사용하기 위함
 const app = express();
 
-
+//view 폴터 미들웨어
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
+//바디파서 미들웨어
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+//세션 미들웨어
 app.use(session({
     secret: "My Secret",
     resave: false,
     saveUninitialized: false
 }));
+
 //라우터 설정
 app.use("/" , board_router);
 app.use("/user" , user_router);

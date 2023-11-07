@@ -10,13 +10,14 @@
         <a href = "/user/login">[로그인]</a>
     <% }else{%>
         <%=login%> 님 로그인 중 입니다
-        <a href = "/board/write">[게시글 쓰기]</a>
-    <%}%>
-    <form action = "/user/login" method="post">
-        이름 : <input type = "text" name = "name">
-        <input type = "submit" value="login">
+        <a href = "/board/write">[게시글 쓰기]</a> <br>
+        <a href = "/user/logout">[로그 아웃]</a> <br>
+    <% } %>
+<!--    <form action = "/user/login" method="post">-->
+<!--        이름 : <input type = "text" name = "name">-->
+<!--        <input type = "submit" value="login">-->
 
-    </form>
+<!--    </form>-->
 </div>
 </body>
 </html>
