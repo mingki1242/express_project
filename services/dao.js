@@ -14,13 +14,25 @@ async function getAllList() {
 }
 
 
-async function insert(writer , body)
+async function insert(writer , title ,body)
 {
-    const sql = "insert into tweet values(? , ? , ?)";
-    await db.query(sql , [writer , body , newDate()]);
+    const sql = "insert into board (writer , title , body , regdate) values(?,?,?,?)";
+    await db.query(sql , [writer , title ,body , new Date()]);
+}
+
+async function getOne(id , increment)
+{
+    let sql = "select * from board where id = ?";
+    const [rows] = await db.query(sql , [id]);
+    if(increment){
+        sql = "update board set read_cnt = read_cnt+1 where id = ?";
+        await db.query(sql , [id]);
+    }
+    return rows[0];
 }
 
 module.exports = {
     getAllList,
-    insert
+    insert,
+    getOne
 }

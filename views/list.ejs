@@ -21,21 +21,11 @@
 
             <%for(const row of records) { %>
             <tr>
-                <td>
-                    <%=row.id%>
-                </td>
-                <td>
-                    <%=row.title%>
-                </td>
-                <td>
-                    <%=row.writer%>
-                </td>
-                <td>
-                    <%=row.regdate%>
-                </td>
-                <td>
-                    <%=row.read_cnt%>
-                </td>
+                <td><%=row.id%></td>
+                <td><a href = "/board/<%=row.id%>"><%=row.title%></a></td>
+                <td><%=row.writer%></td>
+                <td><%=row.regdate%></td>
+                <td><%=row.read_cnt%></td>
             </tr>
             <%}%>
         </table>

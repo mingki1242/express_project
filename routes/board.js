@@ -9,4 +9,20 @@ router.get("/", async (req, res) => {
     }
 );
 
+router.get("/board/write" , (req,res) => {
+    res.render("write");
+})
+
+router.post("/board/write" , async (req,res) =>{
+   await dao.insert(req.session.login , req.body.title ,req.body.body)
+   res.redirect("/");
+});
+
+router.get("/board/:id" , async (req , res) =>{
+    obj = {};
+    obj.login = req.session.login;
+    obj.record = await dao.getOne(req.params.id , true);
+    res.render("detail" , obj);
+})
+
 module.exports = router;
