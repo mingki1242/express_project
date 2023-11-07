@@ -3,8 +3,9 @@ const db = require("./db");
 
 //모든 내용 가져오기
 async function getAllList() {
-    const sql = "select * from tweet";
-    const result = await db.query(sql);
+    const sql = "select * from board";
+    const result = [];
+    result = await db.query(sql);
     if(!result)
     {
         return [];

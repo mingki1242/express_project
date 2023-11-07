@@ -13,11 +13,33 @@
         <a href = "/board/write">[게시글 쓰기]</a> <br>
         <a href = "/user/logout">[로그 아웃]</a> <br>
     <% } %>
-<!--    <form action = "/user/login" method="post">-->
-<!--        이름 : <input type = "text" name = "name">-->
-<!--        <input type = "submit" value="login">-->
 
-<!--    </form>-->
+    <hr>
+        <table border="1">
+            <th>번호</th> <th>제목</th> <th>작성자</th> <th>작성일</th> <th>조회수</th>
+            <%=records%>
+            <%for(const row of records) { %>
+            <tr>
+                <td>
+                    <%=row.id%>
+                </td>
+                <td>
+                    <%=row.title%>
+                </td>
+                <td>
+                    <%=row.writer%>
+                </td>
+                <td>
+                    <%=row.regdate%>
+                </td>
+                <td>
+                    <%=row.read_cnt%>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+
+
 </div>
 </body>
 </html>
