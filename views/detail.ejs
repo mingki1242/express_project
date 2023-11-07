@@ -27,6 +27,7 @@
                 <%if(login == record.writer) {%>
                     <a href = "/">[목록]</a>
                     <a href="/board/update/<%=record.id%>">[게시글 수정]</a>
+                    <a href = "/board/delete/<%=record.id%>">[삭제]</a>
                 <%} else {%>
                     <a href = "/">[목록]</a>
                 <%}%>

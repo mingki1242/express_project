@@ -25,11 +25,20 @@ router.get("/board/:id" , async (req , res) =>{
     res.render("detail" , obj);
 })
 
-router.get("/board/update/:id" (req,res) =>{
+router.get("/board/update/:id", async (req,res) =>{
     obj = {};
     obj.login = req.session.login;
     obj.record = await dao.getOne(req.params.id , false);
     res.render("update" , obj);
 })
 
+router.post("/board/update/:id" ,async (req,res) => {
+    await dao.update(req.params.id , req.body.title , req.body.body);
+    res.redirect("/");
+})
+
+router.get("/board/delete/:id" , async (req,res) => {
+    await dao.deletes(req.params.id);
+    res.redirect("/");
+})
 module.exports = router;

@@ -31,8 +31,22 @@ async function getOne(id , increment)
     return rows[0];
 }
 
+async function update(id , title , body)
+{
+    const sql = "update board set title = ? , body = ? , regdate = ? where id = ?"
+    await db.query(sql ,  [title , body , new Date() , id]);
+}
+
+async function deletes(id)
+{
+    const sql = "delete from board where id = ?";
+    await db.query(sql , [id]);
+}
+
 module.exports = {
     getAllList,
     insert,
-    getOne
+    getOne,
+    update,
+    deletes
 }
