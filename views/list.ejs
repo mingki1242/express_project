@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트</title>
+</head>
+<body>
+<div align="center">
+    <% if(!login) {%>
+        <a href = "/user/login">[로그인]</a>
+    <% }else{%>
+        <%=login%> 님 로그인 중 입니다
+        <a href = "/board/write">[게시글 쓰기]</a>
+    <%}%>
+    <form action = "/user/login" method="post">
+        이름 : <input type = "text" name = "name">
+        <input type = "submit" value="login">
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div align="center">
+    <h2> My Simple Twitter!! </h2>
+    <hr>
+    <form action = "/tweet" method="post">
+        이름 : @<%login%>
+        <input type = "text" name = "message">
+        <input type = "submit" value="tweet">
+    </form>
+
+    <hr>
+
+
+</div>
+
+<%if(record.length > 0) {%>
+    <ul>
+        <% for (const row of record) {%>
+            <li>
+                <%=row.writer%> ::
+                <%=row.body%> ,
+                <%=row.time%>
+            </li>
+        <%}%>
+    </ul>
+
+<%}%>
+</body>
+</html>
