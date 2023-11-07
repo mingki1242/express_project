@@ -46,4 +46,5 @@ router.get("/logout", (req, res, next) => {
     })
   });
 });
+
 module.exports = router;

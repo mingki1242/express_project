@@ -14,10 +14,11 @@
         <a href = "/user/logout">[로그 아웃]</a> <br>
     <% } %>
 
-    <hr>
+        <hr>
+
         <table border="1">
             <th>번호</th> <th>제목</th> <th>작성자</th> <th>작성일</th> <th>조회수</th>
-            <%=records%>
+
             <%for(const row of records) { %>
             <tr>
                 <td>
@@ -38,6 +39,7 @@
             </tr>
             <%}%>
         </table>
+
 
 
 </div>

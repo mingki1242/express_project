@@ -3,18 +3,16 @@ const db = require("./db");
 
 //모든 내용 가져오기
 async function getAllList() {
-    const sql = "select * from board";
-    const result = [];
-    result = await db.query(sql);
-    if(!result)
-    {
+    const sql = "select id , title , writer," +
+        "date_format(regdate ,'%Y-%m-%d %H:%i:%d') regdate , read_cnt from board";
+    const result = await db.query(sql);
+    if (!result) {
         return [];
-    }
-    else {
+    } else {
         return result;
     }
-
 }
+
 
 async function insert(writer , body)
 {
@@ -22,7 +20,7 @@ async function insert(writer , body)
     await db.query(sql , [writer , body , newDate()]);
 }
 
-module.export = {
+module.exports = {
     getAllList,
     insert
 }
