@@ -25,4 +25,11 @@ router.get("/board/:id" , async (req , res) =>{
     res.render("detail" , obj);
 })
 
+router.get("/board/update/:id" (req,res) =>{
+    obj = {};
+    obj.login = req.session.login;
+    obj.record = await dao.getOne(req.params.id , false);
+    res.render("update" , obj);
+})
+
 module.exports = router;

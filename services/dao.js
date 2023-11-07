@@ -23,7 +23,7 @@ async function insert(writer , title ,body)
 async function getOne(id , increment)
 {
     let sql = "select * from board where id = ?";
-    const [rows] = await db.query(sql , [id]);
+    const rows = await db.query(sql , [id]);
     if(increment){
         sql = "update board set read_cnt = read_cnt+1 where id = ?";
         await db.query(sql , [id]);
